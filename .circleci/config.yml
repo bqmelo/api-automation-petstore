@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Regression test
           command: |
-            gradlew regressionTest
+            gradle regressionTest
           when: always
       - store_test_results:
           path: app/build/test-results
