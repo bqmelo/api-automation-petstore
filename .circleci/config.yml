@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: cimg/openjdk:11.0.13
+      - image: circleci/openjdk:8-jdk
 
     working_directory: ~/repo
 
@@ -35,7 +35,7 @@ jobs:
             - gradle
   regressionTest:
     docker:
-      - image: cimg/openjdk:11.0.13
+      - image: circleci/openjdk:8-jdk
       - image: swaggerapi/petstore3:unstable
     environment:
       ENV: circle
@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Sanity Cucumber Tests
           command: |
-            gradle regressionTest
+            gradlew regressionTest
           when: always
       - store_test_results:
           path: app/build/reports
