@@ -16,10 +16,15 @@ java {
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.+'
 
+    testImplementation 'org.aeonbits.owner:owner:1.0.+'
     testImplementation 'io.cucumber:cucumber-core:5.6.0'
     testImplementation 'io.cucumber:cucumber-java:6.8.+'
     testImplementation 'io.cucumber:cucumber-junit:6.8.+'
     testImplementation 'io.rest-assured:rest-assured:4.3.+'
 }
 
-dockerCompose.isRequiredBy(test)
+task localTest(type: Test) {}
+
+task regressionTest(type: Test) {}
+
+dockerCompose.isRequiredBy(localTest)

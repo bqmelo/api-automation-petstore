@@ -1,5 +1,7 @@
 package api.automation.pet.store.steps;
 
+import api.automation.pet.store.support.config.ConfigManager;
+import api.automation.pet.store.support.config.ServerConfig;
 import io.cucumber.java.Before;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -12,8 +14,10 @@ public class Config {
     public void setup() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
-        RestAssured.baseURI = "http://localhost:3306";
-        RestAssured.basePath = "/api/v3";
+        ServerConfig properties = ConfigManager.getConfiguration();
+
+        RestAssured.baseURI = String.format("%s:%d", properties.baseURI(), properties);
+        RestAssured.basePath = properties.basePath();
 
         RestAssured.requestSpecification = new RequestSpecBuilder().
                 addHeader("api_key", getToken()).
