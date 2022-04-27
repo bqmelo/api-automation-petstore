@@ -16,7 +16,7 @@ public class Config {
 
         ServerConfig properties = ConfigManager.getConfiguration();
 
-        RestAssured.baseURI = String.format("%s:%d", properties.baseURI(), properties);
+        RestAssured.baseURI = String.format("%s:%d", properties.baseURI(), properties.port());
         RestAssured.basePath = properties.basePath();
 
         RestAssured.requestSpecification = new RequestSpecBuilder().
