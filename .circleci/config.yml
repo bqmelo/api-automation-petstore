@@ -48,7 +48,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "app/build.gradle" }}
       - run:
-          name: Sanity Cucumber Tests
+          name: Regression test
           command: |
             gradlew regressionTest
           when: always
