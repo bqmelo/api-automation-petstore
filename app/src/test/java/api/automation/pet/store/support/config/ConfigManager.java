@@ -9,6 +9,4 @@ public class ConfigManager {
     public static ServerConfig getConfiguration() {
         return ConfigCache.getOrCreate(ServerConfig.class);
     }
-
-
 }
