@@ -1,14 +1,12 @@
-package api.automation.pet.store.steps;
+package api.automation.pet.store.support.config;
 
-import api.automation.pet.store.support.config.ConfigManager;
-import api.automation.pet.store.support.config.ServerConfig;
 import io.cucumber.java.Before;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 
-public class Config {
+public class RequestConfig {
 
     @Before
     public void setup() {
