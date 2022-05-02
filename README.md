@@ -49,6 +49,42 @@ gradle/
 README.md
 ```
 
+### Project details
+
+- Language: Java
+- Package manager: Gradle
+- Testing Tools: Cucumber, RestAssured
+- Reports: Cucumber report and Junit
+- CI platform: CircleCi
+
+#### Scenarios covered
+- Create user:
+  - The POST user **must** be working, as the user should be able to create a new user in the app. It prevents sharing users in the PetStore.
+
+- Get user:
+  - This one is important to verify if the user created is there.
+
+- Create pet:
+  - In the PetStore, I suppose the main “job” is around pets. So the user should be able to create a pet.
+
+- Update user:
+  - As one of the properties in the Pet JSON is `status`, it is important for the user tracking which pet is available, pending, or sold. So, the user should be able to update this property in the PetStore.
+
+- Get Pet by status:
+  - The user should be able to filter the Pets by status.
+
+#### Reports
+
+- CI:
+  - In the `Test` tab you will find if something went wrong
+  - In the `Artifacts` tab you will find the reports
+
+
+- Local after run the project: `app/build/reports/feature.html`
+
+The folder report and the report itself are generated in every run.
+
+
 ## Continuous Integration with CircleCI
 Continuous integration improves team productivity, efficiency, confidence, and happiness. Find problems and solve them quickly. Release higher quality, more stable products.
 
@@ -110,8 +146,7 @@ To run the tests you can use 2 commands:
 ./gradlew localTest
 ```
 
-#### Reports
-
-You can find the Cucumber Report in the path: `app/build/reports/feature.html`.
-
-The report is generated in every run.
+# Next Steps
+1. Find a solution in CircleCi to use the `execute shell` for executing a .bash in the project, or execute the `Calliope POST request` directly in config.yml for sending the test results to the Calliope platform.
+2. Refine the reports and specs in code to get more clear results.
+3. Integrate project in another CI to get knowledge in other platforms.
