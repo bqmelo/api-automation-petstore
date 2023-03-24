@@ -58,20 +58,11 @@ README.md
 - CI platform: CircleCi
 
 #### Scenarios covered
-- Create user:
-  - The POST user **must** be working, as the user should be able to create a new user in the app. It prevents sharing users in the PetStore.
-
-- Get user:
-  - This one is important to verify if the user created is there.
-
-- Create pet:
-  - In the PetStore, I suppose the main “job” is around pets. So the user should be able to create a pet.
-
+- Create user;
+- Get user;
+- Create pet;
 - Update user:
-  - As one of the properties in the Pet JSON is `status`, it is important for the user tracking which pet is available, pending, or sold. So, the user should be able to update this property in the PetStore.
-
-- Get Pet by status:
-  - The user should be able to filter the Pets by status.
+- Get Pet by status;
 
 #### Reports
 
